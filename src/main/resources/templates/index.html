@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista</title>
+</head>
+<body>
+    <div>
+        <table> 
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                </tr>    
+            </thead>
+            <tbody>
+                <tr th:each="test : ${tests}" scope="row">
+                    <td th:text="${test.id}"></td></td>
+                    <td th:text="${test.nome}"></td>
+                    <td th:text="${test.descricao}"></td>
+                    <td><a th:href="@{'/deletar/' + ${test.id}}">Deletar </a></td>
+                    <td><a th:href="@{'/editar/' + ${test.id}}">Editar </a></td>
+                </tr>
+            </tbody>
+        </table>
+            <a href="/cadastro">Cadastrar</a>
+    </div>
+</body>
+</html>
